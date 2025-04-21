@@ -3,6 +3,14 @@
 using UnityEngine.InputSystem;
 #endif
 
+public class CursorVisibility : MonoBehaviour
+{
+    private void Start()
+    {
+		Cursor.visible = true; //sets cursor visible
+		Cursor.lockState = CursorLockMode.None; //Allows free cursor movement
+    }
+}
 namespace StarterAssets
 {
 	[RequireComponent(typeof(CharacterController))]

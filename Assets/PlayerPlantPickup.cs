@@ -2,33 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using InventorySystem;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
-public class PlayerPlantPickup : MonoBehaviour
+public class PlayerInventory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField] Camera cam;
-    [SerializeField] InventoryUIManager inventoryUIManager;
-    void Start()
+    [Header("Inventory UI")]
+    public Transform inventoryPanel;        // UI container with item slots
+    public GameObject inventorySlotPrefab;  // A prefab with an Image component
+
+    private List<Sprite> collectedItemIcons = new List<Sprite>();
+
+    public void PlantCollected(Sprite itemIcon)
     {
-        
+        collectedItemIcons.Add(itemIcon);
+        AddItemToUI(itemIcon);
     }
 
-    // Update is called once per frame
-    void Update()
+    void AddItemToUI(Sprite icon)
     {
-        if (Input.GetKey(KeyCode.E))
-        {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hitinfo;
+        GameObject newSlot = Instantiate(inventorySlotPrefab, inventoryPanel);
 
-            if (Physics.Raycast(ray, out hitinfo, 3))
+        // Find the ItemIcon inside the prefab
+        Transform itemIconTransform = newSlot.transform.Find("ItemIcon");
+        if (itemIconTransform != null)
+        {
+            Image iconImage = itemIconTransform.GetComponent<Image>();
+            if (iconImage != null)
             {
-                Object_Pickup item = hitinfo.collider.gameObject.GetComponent<Object_Pickup>();
-                if (item != null)
-                {
-                  
-                }
+                iconImage.sprite = icon;
+            }
+
+            DraggableItem draggable = itemIconTransform.GetComponent<DraggableItem>();
+            if (draggable != null)
+            {
+                draggable.image = iconImage; // Make sure the image field is set!
             }
         }
     }
+
 }
