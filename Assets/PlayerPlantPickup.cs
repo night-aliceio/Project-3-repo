@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class PlayerInventory : MonoBehaviour
 {
     [Header("Inventory UI")]
-    public Transform inventoryPanel;        // UI container with item slots
-    public GameObject inventorySlotPrefab;  // A prefab with an Image component
+    public Transform inventoryPanel;       
+    public GameObject inventorySlotPrefab;  
 
     private List<Sprite> collectedItemIcons = new List<Sprite>();
 
@@ -19,26 +19,40 @@ public class PlayerInventory : MonoBehaviour
         AddItemToUI(itemIcon);
     }
 
+
     void AddItemToUI(Sprite icon)
     {
         GameObject newSlot = Instantiate(inventorySlotPrefab, inventoryPanel);
+        Image imageComponent = newSlot.GetComponent<Image>();
 
-        // Find the ItemIcon inside the prefab
-        Transform itemIconTransform = newSlot.transform.Find("ItemIcon");
-        if (itemIconTransform != null)
+        if (imageComponent != null)
         {
-            Image iconImage = itemIconTransform.GetComponent<Image>();
-            if (iconImage != null)
+            imageComponent.sprite = icon;
+        }
+    
+        foreach (Transform slotTransform in inventoryPanel)
+        {
+            InventorySlot slot = slotTransform.GetComponent<InventorySlot>();
+            if (slot != null && !slot.isUsed)
             {
-                iconImage.sprite = icon;
-            }
-
-            DraggableItem draggable = itemIconTransform.GetComponent<DraggableItem>();
-            if (draggable != null)
-            {
-                draggable.image = iconImage; // Make sure the image field is set!
+                slot.SetItem(icon);
+                return;
             }
         }
+
+        Debug.LogWarning("No empty inventory slots available!");
     }
 
+   
+    
+    public int NumberOfPlants { get; private set; }
+
+    public UnityEvent<PlayerInventory> OnDiamondCollected;
+
+    public void DiamondCollected()
+    {
+        NumberOfPlants++;
+        OnDiamondCollected.Invoke(this);
+    }
 }
+

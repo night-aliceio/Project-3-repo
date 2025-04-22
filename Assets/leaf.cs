@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class leaf : MonoBehaviour
-{
-    public Sprite itemIcon; // Assign in Inspector
 
-    private void OnTriggerEnter(Collider other)
+    public class leaf : MonoBehaviour
     {
-        PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
+        public Sprite itemIcon; // Assign in Inspector
 
-        if (playerInventory != null)
+        private void OnTriggerEnter(Collider other)
         {
-            playerInventory.PlantCollected(itemIcon);
-            gameObject.SetActive(false);
+            PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
+
+            if (playerInventory != null)
+            {
+                playerInventory.PlantCollected(itemIcon);
+                gameObject.SetActive(false);
+            }
         }
     }
-}
-    
 
