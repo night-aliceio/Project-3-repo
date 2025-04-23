@@ -24,6 +24,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         Transform itemIconTransform = transform.Find("ItemIcon");
         if (itemIconTransform != null)
         {
+            Debug.Log("Found item transform");
             Image iconImage = itemIconTransform.GetComponent<Image>();
             if (iconImage != null)
             {
@@ -40,12 +41,15 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 
             isUsed = true;
         }
+        else
+        { 
+            //instantiate item prefab, that has a image and draggableitem component
+        }
     }
 
     public void ClearSlot()
     {
         isUsed = false;
-        // You can also hide the icon here if needed
     }
 }
 

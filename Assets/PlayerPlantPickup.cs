@@ -22,19 +22,21 @@ public class PlayerInventory : MonoBehaviour
 
     void AddItemToUI(Sprite icon)
     {
-        GameObject newSlot = Instantiate(inventorySlotPrefab, inventoryPanel);
-        Image imageComponent = newSlot.GetComponent<Image>();
+        //GameObject newSlot = Instantiate(inventorySlotPrefab, inventoryPanel);
+        //Image imageComponent = newSlot.GetComponent<Image>();
 
-        if (imageComponent != null)
-        {
-            imageComponent.sprite = icon;
-        }
-    
+        //if (imageComponent != null)
+        //{
+        //    imageComponent.sprite = icon;
+        //}
+
+        Debug.Log("Checking slots");
         foreach (Transform slotTransform in inventoryPanel)
         {
             InventorySlot slot = slotTransform.GetComponent<InventorySlot>();
             if (slot != null && !slot.isUsed)
             {
+                Debug.Log("Slot found: " + slot.gameObject.name);
                 slot.SetItem(icon);
                 return;
             }

@@ -9,9 +9,11 @@ public class CollectibleItem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Hit object");
         PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
         if (playerInventory != null && itemIcon != null)
         {
+            Debug.Log("Adding to inv");
             playerInventory.PlantCollected(itemIcon);
             gameObject.SetActive(false);
         }
