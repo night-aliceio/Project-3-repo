@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class PlayerInventory : MonoBehaviour
 {
     [Header("Inventory UI")]
-    public Transform inventoryPanel;       
-    public GameObject inventorySlotPrefab;  
+    public Transform inventoryPanel;
+    public GameObject inventorySlotPrefab;
 
     private List<Sprite> collectedItemIcons = new List<Sprite>();
 
@@ -45,16 +45,28 @@ public class PlayerInventory : MonoBehaviour
         Debug.LogWarning("No empty inventory slots available!");
     }
 
-   
-    
-    public int NumberOfPlants { get; private set; }
+    private Dictionary<string, Sprite> inventory = new Dictionary<string, Sprite>();
 
-    public UnityEvent<PlayerInventory> OnDiamondCollected;
-
-    public void DiamondCollected()
+    public bool HasItem(string itemName)
     {
-        NumberOfPlants++;
-        OnDiamondCollected.Invoke(this);
+        return inventory.ContainsKey(itemName);
+    }
+
+    public void AddItem(string itemName, Sprite icon)
+    {
+        if (!inventory.ContainsKey(itemName))
+        {
+            inventory.Add(itemName, icon);
+            AddItemToUI(icon);
+        }
+    }
+    public bool HasItem(Sprite spriteToCheck)
+    {
+        foreach (var entry in inventory)
+        {
+            if (entry.Value != null && entry.Value.name == spriteToCheck.name)
+                return true;
+        }
+        return false;
     }
 }
-

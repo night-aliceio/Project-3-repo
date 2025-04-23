@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e5e534e733b274c9bc3536a029d7ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isUsed: 0
 --- !u!1001 &9083546040205845734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -202,9 +203,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8032561808578279691, guid: 278e44bace738a048b089e3b72645cb2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032561808578279691, guid: 278e44bace738a048b089e3b72645cb2, type: 3}
+      propertyPath: m_Color.b
+      value: 0.34901962
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032561808578279691, guid: 278e44bace738a048b089e3b72645cb2, type: 3}
+      propertyPath: m_Color.g
+      value: 0.47450984
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032561808578279691, guid: 278e44bace738a048b089e3b72645cb2, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7411765
+      objectReference: {fileID: 0}
     - target: {fileID: 8826142221917681974, guid: 278e44bace738a048b089e3b72645cb2, type: 3}
       propertyPath: m_Name
-      value: SampleItem
+      value: ItemIcon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

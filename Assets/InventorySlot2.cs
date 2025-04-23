@@ -1,10 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour, IDropHandler
+public class InventorySlot2 : MonoBehaviour, IDropHandler
 {
     public void OnDrop(PointerEventData eventData)
     {
@@ -14,7 +14,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         {
             draggableItem.parentAfterDrag = transform;
         }
-
     }
 
 
@@ -53,4 +52,3 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         isUsed = false;
     }
 }
-
