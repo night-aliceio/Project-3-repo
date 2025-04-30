@@ -1,53 +1,69 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class InventorySlot : MonoBehaviour, IDropHandler
 {
     public bool isUsed = false;
+   
+
     public void OnDrop(PointerEventData eventData)
     {
+        GameObject droppedObject = eventData.pointerDrag;
+        if (droppedObject == null) return;
+
+        DraggableItem droppedItem = droppedObject.GetComponent<DraggableItem>();
+        if (droppedItem == null || droppedItem.image.sprite == null) return;
+
+        Transform itemIconTransform = transform.Find("ItemIcon");
+        if (itemIconTransform == null) return;
+
+        Image currentImage = itemIconTransform.GetComponent<Image>();
+        Sprite currentSprite = currentImage != null ? currentImage.sprite : null;
+
+        // If this slot already has an item, check for combination
+        if (isUsed && currentSprite != null)
         {
-            GameObject droppedObject = eventData.pointerDrag;
-            if (droppedObject == null) return;
-
-            DraggableItem droppedItem = droppedObject.GetComponent<DraggableItem>();
-            if (droppedItem == null || droppedItem.image == null) return;
-
-            Transform itemIconTransform = transform.Find("ItemIcon");
-            if (itemIconTransform == null) return;
-
-            Image currentImage = itemIconTransform.GetComponent<Image>();
-
-            if (currentImage != null && currentImage.sprite != null)
+            Sprite comboResult = ItemCombinationManager.Instance.GetCombinationResult(currentSprite, droppedItem.image.sprite);
+            if (comboResult != null)
             {
-                // Slot already has something - try COMBINE
-                Sprite comboResult = ItemCombinationManager.Instance.GetCombinationResult(currentImage.sprite, droppedItem.image.sprite);
+                Debug.Log("Items Combined!");
 
-                if (comboResult != null)
-                {
-                    Debug.Log("✅ Items Combined!");
+                // Set new combined sprite
+                currentImage.GetComponentInParent<InventorySlot>().ClearSlot();
 
-                    // Update this slot with the new combined sprite
-                    currentImage.sprite = comboResult;
+                //droppedItem.image = null;
+                Debug.Log(droppedItem.parentAfterDrag.name);
 
-                    // Destroy the dragged item
-                    Destroy(droppedObject);
+                // Animate the slot for feedback
+                StartCoroutine(AnimateCombination());
 
-                    return;
-                }
+                //droppedItem.enabled = false;  // Disable dragging functionality 
+
+                
+                droppedItem.image.sprite = null; // Set new sprite if needed
+                
+
+
+                var playerinventory = FindObjectOfType<PlayerInventory>();
+                // add to inventory
+                playerinventory.AddItem(comboResult.name,comboResult);
+                
+                //remove old items from inventory
+
+                return;
             }
-
-            // If no combination: just move the item into this slot
+        }
+        if (!isUsed || currentImage.sprite == null)
+        {
             droppedItem.parentAfterDrag = transform;
             droppedItem.transform.SetParent(itemIconTransform.parent);
             droppedItem.transform.position = transform.position;
             isUsed = true;
         }
     }
-
 
     public void SetItem(Sprite icon)
     {
@@ -73,7 +89,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         }
         else
         {
-            //instantiate item prefab, that has a image and draggableitem component
+            Debug.LogWarning("ItemIcon child not found under slot!");
         }
     }
 
@@ -92,5 +108,32 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 
         isUsed = false;
     }
-}
 
+    private IEnumerator AnimateCombination()
+    {
+        Vector3 originalScale = transform.localScale;
+        Vector3 enlargedScale = originalScale * 1.2f;
+
+        float duration = 0.2f;
+        float elapsed = 0f;
+
+        // Scale up
+        while (elapsed < duration)
+        {
+            transform.localScale = Vector3.Lerp(originalScale, enlargedScale, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        transform.localScale = enlargedScale;
+
+        // Scale back down
+        elapsed = 0f;
+        while (elapsed < duration)
+        {
+            transform.localScale = Vector3.Lerp(enlargedScale, originalScale, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        transform.localScale = originalScale;
+    }
+}

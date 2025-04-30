@@ -13,23 +13,54 @@ public class PlayerInventory : MonoBehaviour
 
     private List<Sprite> collectedItemIcons = new List<Sprite>();
 
+    private Dictionary<string, List<Sprite>> inventory = new Dictionary<string, List<Sprite>>();
+
     public void PlantCollected(Sprite itemIcon)
     {
         collectedItemIcons.Add(itemIcon);
-        AddItemToUI(itemIcon);
+        AddItem(itemIcon.name, itemIcon);
     }
 
+    public void AddItem(string itemName, Sprite icon)
+    {
+        if (!inventory.ContainsKey(itemName))
+        {
+            inventory.Add(itemName, new List<Sprite>());
+        }
+
+        // Add the icon to the list of sprites under the itemName
+        if (!inventory[itemName].Contains(icon))
+        {
+            inventory[itemName].Add(icon);
+        }
+        AddItemToUI(icon);
+    }
+
+    //method to remove item
+
+    public bool HasItem(Sprite spriteToCheck)
+    {
+        foreach (var entry in inventory)
+        {
+            foreach (var icon in entry.Value)
+            {
+                // Check if any of the sprites match the given sprite
+                if (icon.name == spriteToCheck.name)
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public bool HasItem(string itemName)
+    {
+        return inventory.ContainsKey(itemName) && inventory[itemName].Count > 0;
+    }
 
     void AddItemToUI(Sprite icon)
     {
-        //GameObject newSlot = Instantiate(inventorySlotPrefab, inventoryPanel);
-        //Image imageComponent = newSlot.GetComponent<Image>();
-
-        //if (imageComponent != null)
-        //{
-        //    imageComponent.sprite = icon;
-        //}
-
         Debug.Log("Checking slots");
         foreach (Transform slotTransform in inventoryPanel)
         {
@@ -43,30 +74,5 @@ public class PlayerInventory : MonoBehaviour
         }
 
         Debug.LogWarning("No empty inventory slots available!");
-    }
-
-    private Dictionary<string, Sprite> inventory = new Dictionary<string, Sprite>();
-
-    public bool HasItem(string itemName)
-    {
-        return inventory.ContainsKey(itemName);
-    }
-
-    public void AddItem(string itemName, Sprite icon)
-    {
-        if (!inventory.ContainsKey(itemName))
-        {
-            inventory.Add(itemName, icon);
-            AddItemToUI(icon);
-        }
-    }
-    public bool HasItem(Sprite spriteToCheck)
-    {
-        foreach (var entry in inventory)
-        {
-            if (entry.Value != null && entry.Value.name == spriteToCheck.name)
-                return true;
-        }
-        return false;
     }
 }

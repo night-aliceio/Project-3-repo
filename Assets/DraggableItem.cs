@@ -31,5 +31,9 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             transform.SetParent(parentAfterDrag);
         transform.position = parentAfterDrag.position;
         image.raycastTarget = true;
+        if(image.sprite == null)
+        {
+            GetComponentInParent<InventorySlot>().ClearSlot();
+        }
         }
     }

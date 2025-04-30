@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class InteractableObject : MonoBehaviour
 {
     [Header("Required Item")]
-    public Sprite requiredSprite;  // Assign the required sprite in the Inspector
+    public Sprite requiredSprite;  // The original item sprite
 
     [Header("Reward Item")]
     public string rewardItemName;
@@ -21,7 +23,7 @@ public class InteractableObject : MonoBehaviour
 
         if (playerInventory != null)
         {
-            if (playerInventory.HasItem(requiredSprite))
+            if (playerInventory.HasItem(requiredSprite))  // Checks if the player has the required sprite (original or combined)
             {
                 // Add reward item
                 playerInventory.AddItem(rewardItemName, rewardItemSprite);
@@ -32,7 +34,6 @@ public class InteractableObject : MonoBehaviour
                 // Show dialogue or message
                 Debug.Log(missingItemDialogue);
             }
-
         }
     }
 }
