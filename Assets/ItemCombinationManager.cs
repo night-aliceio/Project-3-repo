@@ -31,7 +31,6 @@ public class ItemCombinationManager : MonoBehaviour
     {
         foreach (var combo in combinations)
         {
-            Debug.Log($"Checking combo: {combo.itemA.name} + {combo.itemB.name}");
             if ((combo.itemA == a && combo.itemB == b) || (combo.itemA == b && combo.itemB == a))
             {
                 return combo.result;

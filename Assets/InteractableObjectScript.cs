@@ -16,7 +16,9 @@ public class InteractableObject : MonoBehaviour
     [Header("Feedback")]
     [TextArea]
     public string missingItemDialogue = "You don't have the required item.";
+    public string[] missingItemDialogueLines;
 
+    public Dialogue dialogueSystem; //assigned in inspector
     private void OnTriggerEnter(Collider other)
     {
         PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
@@ -31,7 +33,10 @@ public class InteractableObject : MonoBehaviour
             }
             else
             {
-                // Show dialogue or message
+                if (dialogueSystem != null)
+                {
+                    dialogueSystem.StartDialogue(missingItemDialogueLines);
+                }
                 Debug.Log(missingItemDialogue);
             }
         }

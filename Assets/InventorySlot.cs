@@ -40,18 +40,11 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                 // Animate the slot for feedback
                 StartCoroutine(AnimateCombination());
 
-                //droppedItem.enabled = false;  // Disable dragging functionality 
-
-                
                 droppedItem.image.sprite = null; // Set new sprite if needed
-                
-
-
+              
                 var playerinventory = FindObjectOfType<PlayerInventory>();
                 // add to inventory
                 playerinventory.AddItem(comboResult.name,comboResult);
-                
-                //remove old items from inventory
 
                 return;
             }
