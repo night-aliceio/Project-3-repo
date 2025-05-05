@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class InteractableObject : MonoBehaviour
 {
     [Header("Required Item")]
@@ -18,9 +16,15 @@ public class InteractableObject : MonoBehaviour
     public string missingItemDialogue = "You don't have the required item.";
     public string[] missingItemDialogueLines;
 
+    [TextArea]
+    public string[] successDialogueLines;
+
     public Dialogue dialogueSystem; //assigned in inspector
+
+    private bool rewardGiven = false; //tracks when item is given
     private void OnTriggerEnter(Collider other)
     {
+        if (rewardGiven) return; //exit if already given
         PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
 
         if (playerInventory != null)
@@ -29,11 +33,18 @@ public class InteractableObject : MonoBehaviour
             {
                 // Add reward item
                 playerInventory.AddItem(rewardItemName, rewardItemSprite);
+                rewardGiven = true;
                 Debug.Log($"Gave {rewardItemName} to player.");
+
+                //shows success dialouge
+                if (dialogueSystem != null && successDialogueLines.Length > 0 )
+                {
+                    dialogueSystem.StartDialogue(successDialogueLines);
+                }
             }
             else
             {
-                if (dialogueSystem != null)
+                if (dialogueSystem != null && missingItemDialogueLines.Length > 0)
                 {
                     dialogueSystem.StartDialogue(missingItemDialogueLines);
                 }
