@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-    public class leaf : MonoBehaviour
+    public class PlantScript : MonoBehaviour
     {
         public Sprite itemIcon; // Assign in Inspector
 

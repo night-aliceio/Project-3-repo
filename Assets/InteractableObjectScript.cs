@@ -38,6 +38,7 @@ public class InteractableObject : MonoBehaviour
                 // Add reward item
                 playerInventory.AddItem(rewardItemName, rewardItemSprite);
                 rewardGiven = true;
+                
                 Debug.Log($"Gave {rewardItemName} to player.");
 
                 //shows success dialouge

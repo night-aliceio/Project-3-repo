@@ -781,7 +781,7 @@ PrefabInstance:
       addedObject: {fileID: 974256943}
     - targetCorrespondingSourceObject: {fileID: 4350637049652996, guid: ac1d6bc633cb75f43b455f34daf7fd73, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1822911923}
+      addedObject: {fileID: 2014927315}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac1d6bc633cb75f43b455f34daf7fd73, type: 3}
 --- !u!4 &135515283 stripped
@@ -1601,10 +1601,10 @@ MonoBehaviour:
     itemB: {fileID: 21300000, guid: 4ecc8377cef91344d89757e65f629e9a, type: 3}
     result: {fileID: 21300000, guid: 13e3b65a20ad6f140a03e24183a39532, type: 3}
   - itemA: {fileID: 21300000, guid: d6aa9d176c9f0f24194542f4e85df23b, type: 3}
-    itemB: {fileID: 21300000, guid: 723d207193e9ed845bf54af6a4418190, type: 3}
+    itemB: {fileID: 21300000, guid: 1d009f967782ffd4aa06e8b9d441dca8, type: 3}
     result: {fileID: 21300000, guid: b0fa5251bbab1974f8d2b8e1bf2d7fdb, type: 3}
   - itemA: {fileID: 21300000, guid: a9b59fb1de09c1145b320cf43a5c3c0e, type: 3}
-    itemB: {fileID: 21300000, guid: 1d009f967782ffd4aa06e8b9d441dca8, type: 3}
+    itemB: {fileID: 21300000, guid: 723d207193e9ed845bf54af6a4418190, type: 3}
     result: {fileID: 21300000, guid: 3172542d09510044a9a4e974d7555051, type: 3}
   - itemA: {fileID: 21300000, guid: 13e3b65a20ad6f140a03e24183a39532, type: 3}
     itemB: {fileID: 21300000, guid: b0fa5251bbab1974f8d2b8e1bf2d7fdb, type: 3}
@@ -2259,7 +2259,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 5, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &405729504
@@ -2275,8 +2275,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1012784209}
-  lines: []
-  textSpeed: 0.1
+  lines:
+  - Welcome to the escape room!
+  - 'Collect plants, combine items, and talk to 3 interactable objects and the door
+    to escape! '
+  textSpeed: 0.05
 --- !u!114 &405729505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2583,9 +2586,9 @@ MonoBehaviour:
   rewardItemSprite: {fileID: 21300000, guid: 278c64589cf893e499ca5ea227316edd, type: 3}
   missingItemDialogue: I don't see required item...
   missingItemDialogueLines:
-  - I don't see required item..
+  - I require a combined item...
   successDialogueLines:
-  - Succes!
+  - Success! Gave new item.
   dialogueSystem: {fileID: 405729504}
   endCanvas: {fileID: 0}
   isFinalObject: 0
@@ -3133,9 +3136,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1851448224}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -280, y: 160}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 163, y: -38}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &652394406
@@ -3158,9 +3161,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Press "R" to restart
-
-    Press "I" to open inventory'
+  m_text: "Press \"R\" to restart\t\nPress \"I\" to open inventory\nClick to exit
+    dialogue"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3256,27 +3258,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2597801575329504946, guid: 140ecd7bf3788e44a9cab3d2fe24d873, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.0434213
+      value: 1.3533174
       objectReference: {fileID: 0}
     - target: {fileID: 2597801575329504946, guid: 140ecd7bf3788e44a9cab3d2fe24d873, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.0675728
+      value: 2.681642
       objectReference: {fileID: 0}
     - target: {fileID: 2597801575329504946, guid: 140ecd7bf3788e44a9cab3d2fe24d873, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.0434213
+      value: 1.3533174
       objectReference: {fileID: 0}
     - target: {fileID: 2597801575329504946, guid: 140ecd7bf3788e44a9cab3d2fe24d873, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -42.48553
+      value: -42.12
       objectReference: {fileID: 0}
     - target: {fileID: 2597801575329504946, guid: 140ecd7bf3788e44a9cab3d2fe24d873, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -131.22072
+      value: -131.23
       objectReference: {fileID: 0}
     - target: {fileID: 2597801575329504946, guid: 140ecd7bf3788e44a9cab3d2fe24d873, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.4124874
+      value: -1.01
       objectReference: {fileID: 0}
     - target: {fileID: 2597801575329504946, guid: 140ecd7bf3788e44a9cab3d2fe24d873, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4360,7 +4362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 238.2, y: 181.1}
+  m_AnchoredPosition: {x: 238.2, y: 176}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &863997756
@@ -4729,15 +4731,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8203601432497007156, guid: 7d14e687ad416294997fbf1df0f41acb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -41.53595
+      value: -40.564
       objectReference: {fileID: 0}
     - target: {fileID: 8203601432497007156, guid: 7d14e687ad416294997fbf1df0f41acb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -131.36546
+      value: -130.539
       objectReference: {fileID: 0}
     - target: {fileID: 8203601432497007156, guid: 7d14e687ad416294997fbf1df0f41acb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.2250447
+      value: -5.539
       objectReference: {fileID: 0}
     - target: {fileID: 8203601432497007156, guid: 7d14e687ad416294997fbf1df0f41acb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4774,6 +4776,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8203601432496649748, guid: 7d14e687ad416294997fbf1df0f41acb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1996890015}
+    - targetCorrespondingSourceObject: {fileID: 8203601432496649748, guid: 7d14e687ad416294997fbf1df0f41acb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1996890020}
   m_SourcePrefab: {fileID: 100100000, guid: 7d14e687ad416294997fbf1df0f41acb, type: 3}
 --- !u!1001 &944072209
 PrefabInstance:
@@ -5139,7 +5144,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -103.79489, y: -128.20827, z: -76.16257, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5858,7 +5863,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 135515283}
     m_Modifications:
     - target: {fileID: 116136, guid: 0e749be40a6b4f60935cf7e490b57d1e, type: 3}
       propertyPath: m_Name
@@ -5866,15 +5871,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 416136, guid: 0e749be40a6b4f60935cf7e490b57d1e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.962885
+      value: 7.482885
       objectReference: {fileID: 0}
     - target: {fileID: 416136, guid: 0e749be40a6b4f60935cf7e490b57d1e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0007278323
+      value: -3.880728
       objectReference: {fileID: 0}
     - target: {fileID: 416136, guid: 0e749be40a6b4f60935cf7e490b57d1e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.74
+      value: -1.7900002
       objectReference: {fileID: 0}
     - target: {fileID: 416136, guid: 0e749be40a6b4f60935cf7e490b57d1e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6285,8 +6290,10 @@ MonoBehaviour:
   rewardItemName: 
   rewardItemSprite: {fileID: 21300000, guid: a9b59fb1de09c1145b320cf43a5c3c0e, type: 3}
   missingItemDialogue: You don't have the required items.
-  missingItemDialogueLines: []
-  successDialogueLines: []
+  missingItemDialogueLines:
+  - I require something cold and a sword...
+  successDialogueLines:
+  - Success! Gave new item.
   dialogueSystem: {fileID: 405729504}
   isFinalObject: 0
   endCanvas: {fileID: 0}
@@ -6312,7 +6319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9034378586971755679, guid: 1c3d40fe1350cb944b8627c68b118cf4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -42.848476
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 9034378586971755679, guid: 1c3d40fe1350cb944b8627c68b118cf4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7644,75 +7651,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa299f61244143f084a68a37435cb7c4, type: 3}
---- !u!1001 &1778459875
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 135515283}
-    m_Modifications:
-    - target: {fileID: 127120, guid: 6b5fd7cab1f845b289850db8ab502261, type: 3}
-      propertyPath: m_Name
-      value: Barrel_01
-      objectReference: {fileID: 0}
-    - target: {fileID: 427120, guid: 6b5fd7cab1f845b289850db8ab502261, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5798
-      objectReference: {fileID: 0}
-    - target: {fileID: 427120, guid: 6b5fd7cab1f845b289850db8ab502261, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5798
-      objectReference: {fileID: 0}
-    - target: {fileID: 427120, guid: 6b5fd7cab1f845b289850db8ab502261, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5798
-      objectReference: {fileID: 0}
-    - target: {fileID: 427120, guid: 6b5fd7cab1f845b289850db8ab502261, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.98
-      objectReference: {fileID: 0}
-    - target: {fileID: 427120, guid: 6b5fd7cab1f845b289850db8ab502261, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.865
-      objectReference: {fileID: 0}
-    - target: {fileID: 427120, guid: 6b5fd7cab1f845b289850db8ab502261, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 427120, guid: 6b5fd7cab1f845b289850db8ab502261, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 427120, guid: 6b5fd7cab1f845b289850db8ab502261, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 427120, guid: 6b5fd7cab1f845b289850db8ab502261, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 427120, guid: 6b5fd7cab1f845b289850db8ab502261, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 427120, guid: 6b5fd7cab1f845b289850db8ab502261, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 427120, guid: 6b5fd7cab1f845b289850db8ab502261, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 427120, guid: 6b5fd7cab1f845b289850db8ab502261, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6b5fd7cab1f845b289850db8ab502261, type: 3}
 --- !u!1 &1780249621
 GameObject:
   m_ObjectHideFlags: 0
@@ -7915,11 +7853,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4416696734411544974, guid: e09caa7261c0356418b8f555e33e3155, type: 3}
   m_PrefabInstance: {fileID: 438200582437423071}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1822911923 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 427120, guid: 6b5fd7cab1f845b289850db8ab502261, type: 3}
-  m_PrefabInstance: {fileID: 1778459875}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1833798697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8017,9 +7950,9 @@ MonoBehaviour:
   rewardItemSprite: {fileID: 21300000, guid: 23db43ed71409784cb554bf5b09a23ee, type: 3}
   missingItemDialogue: You don't have the required item.
   missingItemDialogueLines:
-  - You don't have required item..
+  - I require something very orange...
   successDialogueLines:
-  - Success!
+  - Success! Gave new item.
   dialogueSystem: {fileID: 405729504}
   endCanvas: {fileID: 0}
   isFinalObject: 0
@@ -8642,7 +8575,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925906592}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1925906595
 Camera:
   m_ObjectHideFlags: 0
@@ -9176,6 +9109,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8203601432497007156, guid: 7d14e687ad416294997fbf1df0f41acb, type: 3}
   m_PrefabInstance: {fileID: 927480454}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1996890020
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996890014}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.46861324, y: 1.0302298, z: 0.6593653}
+  m_Center: {x: -0.010866716, y: 0.5149962, z: -0.068919234}
 --- !u!1001 &1996998245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9237,6 +9191,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 871313d097424a8da9d90dc4db5a48ba, type: 3}
+--- !u!4 &2014927315 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 416136, guid: 0e749be40a6b4f60935cf7e490b57d1e, type: 3}
+  m_PrefabInstance: {fileID: 1213967088}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2017460586 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4177046354630628, guid: 9d012b73caba62246906034d78994c42, type: 3}
@@ -9444,7 +9403,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3552762105902794223, guid: 8e0d1230ce9a04f41b7927b0d7a2ac87, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2026002745}
+      addedObject: {fileID: 2026002749}
   m_SourcePrefab: {fileID: 100100000, guid: 8e0d1230ce9a04f41b7927b0d7a2ac87, type: 3}
 --- !u!1 &2026002743 stripped
 GameObject:
@@ -9456,7 +9415,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3552762105902504399, guid: 8e0d1230ce9a04f41b7927b0d7a2ac87, type: 3}
   m_PrefabInstance: {fileID: 2026002742}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2026002745
+--- !u!114 &2026002749
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9465,10 +9424,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2026002743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8d0a99449fe30841bad75c4c31993ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 393b38f5987b6c24d93e52c689af7168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
   itemIcon: {fileID: 21300000, guid: 607b25b80168c2944ad1d64def0699d6, type: 3}
 --- !u!4 &2043969609 stripped
 Transform:
@@ -9799,10 +9757,10 @@ MonoBehaviour:
   requiredSprite1: {fileID: 21300000, guid: 99700ced695b15f45a0e8393b5842e67, type: 3}
   requiredSprite2: {fileID: 21300000, guid: f577c228b0dba004f91952571272b542, type: 3}
   rewardItemName: 
-  rewardItemSprite: {fileID: 0}
+  rewardItemSprite: {fileID: 21300000, guid: 7b1f75373e0be6d4ab8a1c319b99e634, type: 3}
   missingItemDialogue: You don't have the required items.
   missingItemDialogueLines:
-  - 
+  - I require a special key and a scroll...
   successDialogueLines: []
   dialogueSystem: {fileID: 405729504}
   isFinalObject: 1
@@ -10331,8 +10289,7 @@ SceneRoots:
   - {fileID: 463207485}
   - {fileID: 915420902}
   - {fileID: 1408503161}
-  - {fileID: 349160432}
   - {fileID: 1095114188}
+  - {fileID: 349160432}
   - {fileID: 466230588}
   - {fileID: 332315841}
-  - {fileID: 1213967088}
