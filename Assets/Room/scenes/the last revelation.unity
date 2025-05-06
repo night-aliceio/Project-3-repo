@@ -2583,7 +2583,7 @@ MonoBehaviour:
   rewardItemSprite: {fileID: 21300000, guid: 278c64589cf893e499ca5ea227316edd, type: 3}
   missingItemDialogue: I don't see required item...
   missingItemDialogueLines:
-  - I require a combined item...
+  - I require something green and round...
   successDialogueLines:
   - Success! Gave new item.
   dialogueSystem: {fileID: 405729504}
@@ -4613,9 +4613,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 135515283}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1349665462607176, guid: 440d9e69d5aceca4a89f47c4f96043ac, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1718186770}
     - targetCorrespondingSourceObject: {fileID: 1349665462607176, guid: 440d9e69d5aceca4a89f47c4f96043ac, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1718186772}
@@ -6787,43 +6784,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7691351437083212125, guid: 907394fcb1fd35b4e9b3e9df2e45e765, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.495709
+      value: 2.5134284
       objectReference: {fileID: 0}
     - target: {fileID: 7691351437083212125, guid: 907394fcb1fd35b4e9b3e9df2e45e765, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4.9453273
+      value: 4.980439
       objectReference: {fileID: 0}
     - target: {fileID: 7691351437083212125, guid: 907394fcb1fd35b4e9b3e9df2e45e765, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.495709
+      value: 2.5134284
       objectReference: {fileID: 0}
     - target: {fileID: 7691351437083212125, guid: 907394fcb1fd35b4e9b3e9df2e45e765, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -38.22
+      value: -38.120117
       objectReference: {fileID: 0}
     - target: {fileID: 7691351437083212125, guid: 907394fcb1fd35b4e9b3e9df2e45e765, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -130.09
+      value: -130.1336
       objectReference: {fileID: 0}
     - target: {fileID: 7691351437083212125, guid: 907394fcb1fd35b4e9b3e9df2e45e765, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.43
+      value: 1.3514123
       objectReference: {fileID: 0}
     - target: {fileID: 7691351437083212125, guid: 907394fcb1fd35b4e9b3e9df2e45e765, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7814945
+      value: 0.73465335
       objectReference: {fileID: 0}
     - target: {fileID: 7691351437083212125, guid: 907394fcb1fd35b4e9b3e9df2e45e765, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000017080104
+      value: -0.21275611
       objectReference: {fileID: 0}
     - target: {fileID: 7691351437083212125, guid: 907394fcb1fd35b4e9b3e9df2e45e765, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.6239122
+      value: -0.58651614
       objectReference: {fileID: 0}
     - target: {fileID: 7691351437083212125, guid: 907394fcb1fd35b4e9b3e9df2e45e765, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000136360345
+      value: 0.26649222
       objectReference: {fileID: 0}
     - target: {fileID: 7691351437083212125, guid: 907394fcb1fd35b4e9b3e9df2e45e765, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6835,11 +6832,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7691351437083212125, guid: 907394fcb1fd35b4e9b3e9df2e45e765, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 39.876
       objectReference: {fileID: 0}
     - target: {fileID: 7691351437083633021, guid: 907394fcb1fd35b4e9b3e9df2e45e765, type: 3}
       propertyPath: m_Name
       value: Deepwater Brassicale B Leaf
+      objectReference: {fileID: 0}
+    - target: {fileID: 7961810986245213092, guid: 907394fcb1fd35b4e9b3e9df2e45e765, type: 3}
+      propertyPath: m_Size.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7961810986245213092, guid: 907394fcb1fd35b4e9b3e9df2e45e765, type: 3}
+      propertyPath: m_Size.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7961810986245213092, guid: 907394fcb1fd35b4e9b3e9df2e45e765, type: 3}
+      propertyPath: m_Size.z
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7961810986245213092, guid: 907394fcb1fd35b4e9b3e9df2e45e765, type: 3}
+      propertyPath: m_Center.x
+      value: -0.03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7551,27 +7564,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1349665462607176, guid: 440d9e69d5aceca4a89f47c4f96043ac, type: 3}
   m_PrefabInstance: {fileID: 908934350}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1718186770
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1718186768}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &1718186772
 BoxCollider:
   m_ObjectHideFlags: 0

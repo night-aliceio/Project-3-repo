@@ -51,10 +51,15 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         }
         if (!isUsed || currentImage.sprite == null)
         {
+            var previousparent = droppedItem.parentAfterDrag;
+            var newparent = itemIconTransform.parent;
+            itemIconTransform.SetParent(previousparent);
+            itemIconTransform.position = itemIconTransform.parent.position;
             droppedItem.parentAfterDrag = transform;
-            droppedItem.transform.SetParent(itemIconTransform.parent);
+            droppedItem.transform.SetParent(newparent);
             droppedItem.transform.position = transform.position;
             isUsed = true;
+            previousparent.GetComponent<InventorySlot>().isUsed = false;
         }
     }
 
