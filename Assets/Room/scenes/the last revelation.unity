@@ -856,7 +856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7747351752617718916, guid: 229b1b90eb21afd4ab7a48df0a265dbf, type: 3}
       propertyPath: isUsed
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8041386628041824079, guid: 229b1b90eb21afd4ab7a48df0a265dbf, type: 3}
       propertyPath: m_Pivot.x
@@ -2275,10 +2275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1012784209}
-  lines:
-  - Welcome to the escape room!
-  - 'Collect plants, combine items, and talk to 3 interactable objects and the door
-    to escape! '
+  lines: []
   textSpeed: 0.05
 --- !u!114 &405729505
 MonoBehaviour:
@@ -6077,9 +6074,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1451343612572638, guid: 4277c84f4eb45414089869ec9eed16a9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2111576876}
-    - targetCorrespondingSourceObject: {fileID: 1451343612572638, guid: 4277c84f4eb45414089869ec9eed16a9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2111576875}
   m_SourcePrefab: {fileID: 100100000, guid: 4277c84f4eb45414089869ec9eed16a9, type: 3}
 --- !u!1001 &1264608543
 PrefabInstance:
@@ -6291,7 +6285,7 @@ MonoBehaviour:
   rewardItemSprite: {fileID: 21300000, guid: a9b59fb1de09c1145b320cf43a5c3c0e, type: 3}
   missingItemDialogue: You don't have the required items.
   missingItemDialogueLines:
-  - I require something cold and a sword...
+  - I require a sword and somthing cold...
   successDialogueLines:
   - Success! Gave new item.
   dialogueSystem: {fileID: 405729504}
@@ -6658,6 +6652,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1408503170}
+    - targetCorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1408503176}
   m_SourcePrefab: {fileID: 100100000, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
 --- !u!1 &1408503162 stripped
 GameObject:
@@ -6683,6 +6680,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 1391522215}
   inventorySlotPrefab: {fileID: 5713464523123544991, guid: 229b1b90eb21afd4ab7a48df0a265dbf, type: 3}
+  collectSound: {fileID: 8300000, guid: 34f9cbd28a9740349b6cc2f5e280dda3, type: 3}
+--- !u!82 &1408503176
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408503162}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1410778420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9721,27 +9815,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4718715948799430, guid: 4277c84f4eb45414089869ec9eed16a9, type: 3}
   m_PrefabInstance: {fileID: 1244444749}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2111576875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2111576864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67bf95a141c91be4ab77394526bfbc86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  requiredSprite: {fileID: 0}
-  rewardItemName: 
-  rewardItemSprite: {fileID: 0}
-  missingItemDialogue: You don't have the required item.
-  missingItemDialogueLines: []
-  successDialogueLines: []
-  dialogueSystem: {fileID: 0}
-  endCanvas: {fileID: 0}
-  isFinalObject: 0
 --- !u!114 &2111576876
 MonoBehaviour:
   m_ObjectHideFlags: 0
