@@ -6424,7 +6424,7 @@ MonoBehaviour:
   rewardItemSprite: {fileID: 21300000, guid: a9b59fb1de09c1145b320cf43a5c3c0e, type: 3}
   missingItemDialogue: You don't have the required items.
   missingItemDialogueLines:
-  - I require a sword and somthing cold...
+  - I require a sword and something cold...
   successDialogueLines:
   - Success! Gave new item.
   dialogueSystem: {fileID: 405729504}
