@@ -38,8 +38,13 @@ public class InteractableObject : MonoBehaviour
                 // Add reward item
                 playerInventory.AddItem(rewardItemName, rewardItemSprite);
                 rewardGiven = true;
-                
+               
                 Debug.Log($"Gave {rewardItemName} to player.");
+
+                if (AudioManager.Instance != null && AudioManager.Instance.rewardSound != null)
+                {
+                    AudioManager.Instance.PlaySound(AudioManager.Instance.rewardSound);
+                }
 
                 //shows success dialouge
                 if (dialogueSystem != null && successDialogueLines.Length > 0 )

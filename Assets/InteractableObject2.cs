@@ -51,9 +51,11 @@ public class InteractableObject2 : MonoBehaviour
                 dialogueSystem.StartDialogue(successDialogueLines);
 
             if (isFinalObject && endCanvas != null)
+                
                 endCanvas.SetActive(true);
+        AudioManager.Instance.PlaySound(AudioManager.Instance.endSceneSound);
 
-            Debug.Log($"Gave {rewardItemName} to player.");
+        Debug.Log($"Gave {rewardItemName} to player.");
         }
         else
         {

@@ -29,6 +29,12 @@ public class PlayerInventory : MonoBehaviour
     {
         collectedItemIcons.Add(itemIcon);
         AddItem(itemIcon.name, itemIcon);
+
+        // Play pickup sound safely
+        if (AudioManager.Instance != null && AudioManager.Instance.pickupSound != null)
+        {
+            AudioManager.Instance.PlaySound(AudioManager.Instance.pickupSound);
+        }
     }
 
     public void AddItem(string itemName, Sprite icon)

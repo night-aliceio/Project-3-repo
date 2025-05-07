@@ -37,6 +37,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                 //droppedItem.image = null;
                 Debug.Log(droppedItem.parentAfterDrag.name);
 
+                AudioManager.Instance.PlaySound(AudioManager.Instance.combineSound); // reward sound
+
                 // Animate the slot for feedback
                 StartCoroutine(AnimateCombination());
 
